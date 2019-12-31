@@ -14,7 +14,28 @@ public class Subsequence {
      */
     @SuppressWarnings("rawtypes")
     public boolean find(List x, List y) {
-        // TODO: Implement the logic here
-        return false;
+        int listXsize =x.size();
+        int listYsize =y.size();
+        String elementList = "";
+        boolean[] flags = new boolean[listXsize];
+        boolean mainFlag = false;
+        int indexShift = 0;
+        for (int i = 0; i<=listXsize-1; i++) {
+            elementList = x.get(i).toString();
+            for(int j = indexShift; j<=listYsize-1; j++){
+                if(elementList.equals(y.get(j).toString())){
+                    indexShift = i;
+                    flags[i] = true;
+                    break;
+                }
+            }
+        }
+        mainFlag = true;
+        for (int i = 0; i<=listXsize-1; i++) {
+            if (!flags[i]){
+                mainFlag = false;
+            }
+        }
+        return mainFlag;
     }
 }
