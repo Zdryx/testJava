@@ -73,6 +73,7 @@ public class PyramidBuilder {
                 if ((i + 1) % 2 == 1) {
                     int indexPlus = vertexPyramide;
                     int indexMinus = vertexPyramide;
+                    //int indexMinus = vertexPyramide;
                     for (int j = i / 2; j <= i; j++) {
                         result[indexPlus][i] = buffResult[i][j];
                         indexPlus = indexPlus + 2;
